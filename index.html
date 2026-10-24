@@ -1,259 +1,504 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Tech Journey | AI for Her</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<title>Lina's Tech Journey 🌻</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #fffdf3;
-      color: #333333;
-      line-height: 1.7;
-    }
+<style>
+:root {
+    --yellow: #ffdc55;
+    --green: #287447;
+    --dark: #194b32;
+    --cream: #fffbee;
+    --white: #ffffff;
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #fff0a8, #d7efbc);
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #a66b00;
+}
+
+.hero {
+    min-height: 490px;
+    padding: 65px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #fffbee, #f4f9d9);
+}
+
+.hero-text {
+    flex: 1 1 300px;
+}
+
+.tag {
+    display: inline-block;
+    background: #e2f2d6;
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.highlight {
+    color: var(--green);
+}
+
+.hero p {
+    max-width: 520px;
+    font-size: 1.1rem;
+}
+
+.button {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    margin-top: 22px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: var(--dark);
+    transform: translateY(-3px);
+}
+
+.art-card {
+    flex: 0 1 330px;
+    min-height: 290px;
+    background: linear-gradient(145deg, #ffe77e, #d6edb6);
+    border: 5px solid white;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px #194b3218;
+    text-align: center;
+    padding: 25px;
+}
+
+.art-card .big-flower {
+    font-size: 6rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.art-card p {
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+section {
+    padding: 75px 8%;
+    scroll-margin-top: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.about-grid,
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e7e8cf;
+    border-radius: 24px;
+    padding: 27px;
+    box-shadow: 0 8px 25px #194b3209;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #194b3215;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: var(--green);
+}
+
+.icon {
+    font-size: 2.7rem;
+}
+
+.green-section {
+    background: #eaf4df;
+}
+
+.yellow-section {
+    background: #fff4bd;
+}
+
+.journey-step {
+    border-left: 4px solid #8bbd69;
+    padding: 5px 0 20px 20px;
+    margin: 20px 0;
+}
+
+.journey-step h3 {
+    color: var(--green);
+}
+
+.dream-box {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 800px;
+    margin: 25px auto 0;
+    border: 2px dashed #b9cc7b;
+}
+
+.dream-box p {
+    margin-top: 12px;
+}
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer span {
+    color: var(--yellow);
+}
+
+@media (max-width: 600px) {
     header {
-      background: #f5c518;
-      text-align: center;
-      padding: 45px 20px;
-    }
-
-    header h1 {
-      font-size: 2.4rem;
-      color: #3b3000;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1rem;
+        justify-content: center;
+        text-align: center;
     }
 
     nav {
-      background: #3b3000;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 12px;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    nav a:hover {
-      color: #f5c518;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    section {
-      background: white;
-      margin: 25px 0;
-      padding: 25px;
-      border-radius: 15px;
-      border-left: 6px solid #f5c518;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    }
-
-    h2 {
-      color: #806400;
-      margin-bottom: 12px;
+        justify-content: center;
     }
 
     .hero {
-      text-align: center;
-      padding: 35px 20px;
+        text-align: center;
+        justify-content: center;
+        padding: 45px 6%;
     }
 
-    .sunflower {
-      font-size: 65px;
-      margin-bottom: 10px;
+    .hero p {
+        margin: auto;
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
+    section {
+        padding: 55px 6%;
     }
+}
 
-    .skills span {
-      background: #fff0a8;
-      color: #493b00;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-weight: bold;
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
     }
-
-    .button {
-      display: inline-block;
-      background: #806400;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 25px;
-      text-decoration: none;
-      margin-top: 18px;
-    }
-
-    .button:hover {
-      background: #5a4700;
-    }
-
-    footer {
-      text-align: center;
-      background: #3b3000;
-      color: white;
-      padding: 25px 15px;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      nav a {
-        margin: 5px;
-        font-size: 0.9rem;
-      }
-
-      section {
-        padding: 18px;
-      }
-    }
-  </style>
-
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🌻 My Tech Journey</h1>
-    <p>Learning Today, Creating Tomorrow!</p>
-  </header>
+<header>
+    <div class="logo">🌻 Lina's Tech Journey</div>
 
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#challenges">My Journey</a>
-    <a href="#skills">My Skills</a>
-    <a href="#goals">My Dreams</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#journey">My Journey</a>
+        <a href="#skills">Skills</a>
+        <a href="#dreams">Dreams</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-  <main>
+<main>
 
-```
 <section class="hero">
-  <div class="sunflower">🌻</div>
-  <h2>Hello, Welcome to My World!</h2>
-  <p>
-    I am a young learner exploring technology and artificial
-    intelligence through the AI for Her program.
-    This is my story, my progress, and my dream for the future.
-  </p>
-  <a href="#about" class="button">Explore My Journey</a>
+    <div class="hero-text">
+        <span class="tag">🌱 Learning • Growing • Creating</span>
+
+        <h1>
+            Hello, I'm <span class="highlight">Lina!</span> 🌻
+        </h1>
+
+        <p>
+            Welcome to my little corner of the internet!
+            I'm exploring technology, learning about artificial
+            intelligence, and discovering how ideas can become
+            amazing projects.
+        </p>
+
+        <a class="button" href="#about">Explore My World ✨</a>
+    </div>
+
+    <div class="art-card">
+        <div class="big-flower" aria-hidden="true">🌻</div>
+        <div style="font-size: 3rem;" aria-hidden="true">👩🏽‍💻</div>
+        <p>A curious mind with big dreams!</p>
+        <div aria-hidden="true">✨ 💻 🌱 ✨</div>
+    </div>
 </section>
 
 <section id="about">
-  <h2>👩🏽 About Me</h2>
-  <p>
-    My name is Uwhubetine Elo-oghene Christabel. I am 15 years old
-    and from Delta State, Nigeria. I am learning technology through
-    the AI for Her program. I enjoy learning new things, solving
-    problems, and discovering how technology can make life better.
-    Every new skill I learn brings me closer to my dream of making
-    a positive difference in my community.
-  </p>
+    <h2 class="section-title">🌼 A Little About Me</h2>
+
+    <p class="section-intro">
+        Every great journey starts with curiosity.
+        Here's a little about the person behind this website!
+    </p>
+
+    <div class="about-grid">
+        <article class="card">
+            <div class="icon" aria-hidden="true">👩🏽‍💻</div>
+            <h3>Who I Am</h3>
+            <p>
+                I'm Lina, a learner who is exploring the world
+                of technology and discovering new possibilities.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon" aria-hidden="true">🌻</div>
+            <h3>What I Love</h3>
+            <p>
+                I love learning new things, exploring creative
+                ideas, and imagining how technology can help people.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon" aria-hidden="true">💡</div>
+            <h3>My Mindset</h3>
+            <p>
+                I believe that small steps, patience, and practice
+                can help me grow into the person I want to become.
+            </p>
+        </article>
+    </div>
 </section>
 
-<section id="challenges">
-  <h2>💪 My Tech Journey</h2>
-  <p>
-    Learning technology can be challenging. Some girls face limited
-    access to digital devices, reliable internet, and opportunities
-    to develop their skills. I am determined to keep learning,
-    asking questions, and building my confidence. Through AI for Her,
-    I am discovering that girls can be creators, innovators, and
-    leaders in technology. My journey reminds me that challenges
-    do not have to stop me from pursuing my dreams.
-  </p>
+<section id="journey" class="green-section">
+    <h2 class="section-title">🚀 My Tech Journey</h2>
+
+    <p class="section-intro">
+        My journey is about learning, trying new things,
+        and turning my ideas into something real.
+    </p>
+
+    <div class="card">
+        <div class="journey-step">
+            <h3>🌱 Step 1: Starting My Journey</h3>
+            <p>
+                I began exploring technology and learning about
+                the many ways it can make life better.
+            </p>
+        </div>
+
+        <div class="journey-step">
+            <h3>🤖 Step 2: Exploring Artificial Intelligence</h3>
+            <p>
+                Through my AI for Her journey, I'm discovering
+                how AI works and how people can use it to solve problems.
+            </p>
+        </div>
+
+        <div class="journey-step">
+            <h3>💻 Step 3: Building My Website</h3>
+            <p>
+                I created this website with HTML and CSS to share
+                my progress and practice my technology skills.
+            </p>
+        </div>
+
+        <div class="journey-step">
+            <h3>🌟 Step 4: Growing Every Day</h3>
+            <p>
+                I'm ready to keep learning, try new projects,
+                and improve my skills one step at a time.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section id="skills">
-  <h2>💻 Skills I Am Developing</h2>
-  <p>
-    I am building my knowledge step by step and exploring new
-    ways to use technology creatively.
-  </p>
+    <h2 class="section-title">🧰 My Growing Skills</h2>
 
-  <div class="skills">
-    <span>Artificial Intelligence</span>
-    <span>Problem-Solving</span>
-    <span>Digital Skills</span>
-    <span>Creative Thinking</span>
-    <span>Website Development</span>
-    <span>Learning and Research</span>
-  </div>
+    <p class="section-intro">
+        These are skills I'm exploring and developing as I learn.
+        There is always something new to discover!
+    </p>
 
-  <p style="margin-top: 15px;">
-    I am still learning, and I look forward to improving these
-    skills as I gain more experience.
-  </p>
+    <div class="card-grid">
+        <article class="card">
+            <div class="icon" aria-hidden="true">🌐</div>
+            <h3>Web Development</h3>
+            <p>
+                Learning how HTML and CSS work together
+                to create websites.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon" aria-hidden="true">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>
+                Exploring AI and thinking about how it
+                can help solve real-world problems.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon" aria-hidden="true">🧠</div>
+            <h3>Problem-Solving</h3>
+            <p>
+                Practising how to break big challenges
+                into smaller, manageable steps.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon" aria-hidden="true">🎨</div>
+            <h3>Creativity</h3>
+            <p>
+                Turning ideas into designs, projects,
+                and useful digital experiences.
+            </p>
+        </article>
+    </div>
 </section>
 
-<section id="goals">
-  <h2>🚀 My Tech Dreams</h2>
-  <p>
-    My dream is to use technology and artificial intelligence
-    to solve real problems in my community and across Nigeria.
-    I am interested in youth empowerment because I believe young
-    people deserve opportunities to learn, grow, and achieve their
-    goals. In the future, I hope to create useful apps and websites
-    that help people find information and opportunities. I also
-    want to inspire other girls to believe in themselves and explore
-    careers in technology.
-  </p>
+<section id="dreams" class="yellow-section">
+    <h2 class="section-title">🌈 My Dreams for the Future</h2>
+
+    <p class="section-intro">
+        I want to keep growing, creating, and using what I learn
+        to make a positive difference.
+    </p>
+
+    <div class="dream-box">
+        <div style="font-size: 3rem;" aria-hidden="true">
+            🌻 💻 🚀
+        </div>
+
+        <h3>Dream Big, Start Small!</h3>
+
+        <p>
+            My goal is to become more confident with technology,
+            build useful projects, and explore how AI can help
+            people and communities.
+        </p>
+
+        <p>
+            Every new skill is another seed planted.
+            With time and effort, those seeds can grow!
+        </p>
+    </div>
 </section>
 
-<section id="contact">
-  <h2>💌 Contact Me</h2>
-  <p>
-    Thank you for visiting my personal tech journey website!
-    I am excited to keep learning, growing, and discovering new
-    possibilities in technology.
-  </p>
-  <p>
-    <strong>Location:</strong> Delta State, Nigeria
-  </p>
-  <p>
-    <strong>Program:</strong> AI for Her
-  </p>
+<section id="contact" class="contact">
+    <h2 class="section-title">💌 Let's Connect!</h2>
+
+    <p class="section-intro">
+        Thank you for visiting my tech journey.
+        I hope my story inspires you to keep learning,
+        exploring, and following your dreams.
+    </p>
+
+    <div style="font-size: 2.5rem;" aria-hidden="true">
+        🌻 🌱 💛 ✨
+    </div>
+
+    <p><strong>Keep growing. Keep learning. Keep shining!</strong></p>
 </section>
-```
 
-  </main>
+</main>
 
-  <footer>
-    <p>🌻 Growing my dreams, one skill at a time.</p>
-    <p>&copy; 2026 My Tech Journey | Created with curiosity and courage.</p>
-  </footer>
+<footer>
+    <p>Made with <span>💛</span> and lots of sunflower energy 🌻</p>
+    <p>© 2026 Lina's Tech Journey</p>
+</footer>
 
 </body>
 </html>
